@@ -1,0 +1,63 @@
+type: group
+
+fields:
+  _snippets_headline:
+    type: headline
+    icon: list-bullet
+    label: block-index.fields._snippets_headline.label
+    numbered: false
+
+  # snippet
+  overwrite_snippet_file:
+    type: toggle
+    label: block-index.fields.overwrite_snippet_file.label
+    default: false
+    text: block-index.fields.overwrite_snippet_file.text
+    width: 1/3
+  snippet_file:
+    label: block-index.fields.snippet_file.label
+    type: select
+    required: true
+    empty: false
+    icon: file-code
+    placeholder: "{{ t('block-index.fields.snippet_file.placeholder') }}"
+    help: "{{ site._blockIndexPanelGetSnippetFileHelpTranslation('block-index.fields.snippet_file.help') }}"
+    sort: true
+    options:
+      type: query
+      query: site._blockIndexPanelGetSnippetFiles
+      value: "{{ item.value }}"
+      text: "{{ item.title }}"
+    width: 2/3
+    when:
+      overwrite_snippet_file: true
+  _overwrite_snippet_file_gap_post:
+    type: gap
+    width: 2/3
+    when:
+      overwrite_snippet_file: false
+
+  # entry-snippet
+  overwrite_entry_snippet_file:
+    type: toggle
+    label: block-index.fields.overwrite_entry_snippet_file.label
+    default: false
+    text: block-index.fields.overwrite_entry_snippet_file.text
+    width: 1/3
+  entry_snippet_file:
+    label: block-index.fields.entry_snippet_file.label
+    type: select
+    required: true
+    empty: false
+    icon: file-code
+    placeholder: "{{ t('block-index.fields.entry_snippet_file.placeholder') }}"
+    help: "{{ site._blockIndexPanelGetSnippetFileHelpTranslation('block-index.fields.entry_snippet_file.help') }}"
+    sort: true
+    options:
+      type: query
+      query: site._blockIndexPanelGetSnippetFiles
+      value: "{{ item.value }}"
+      text: "{{ item.title }}"
+    width: 2/3
+    when:
+      overwrite_entry_snippet_file: true

@@ -1,0 +1,11 @@
+# to extend default block tabs with your own tabs:
+# - copy this file to /site/blueprints/blocks/index.yml
+# - add your own tabs
+
+name: block-index.block.name
+
+icon: list-bullet
+
+tabs:
+  main: tabs/block-index
+  # yourtab1: ...

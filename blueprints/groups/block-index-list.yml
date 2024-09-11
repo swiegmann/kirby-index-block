@@ -1,0 +1,107 @@
+type: group
+
+fields:
+  _index_headline:
+    type: headline
+    label: block-index.fields._index_headline.label
+    numbered: false
+
+  offset:
+    type: number
+    label: block-index.fields.offset.label
+    min: 0
+    max: 9999999999
+    default: 0
+    required: true
+    width: 1/3
+
+  page_size:
+    type: number
+    label: block-index.fields.page_size.label
+    min: 1
+    max: 9999999999
+    default: 20
+    width: 1/3
+    required: true
+  _page_size_gap_post:
+    type: gap
+    width: 1/3
+
+  sort:
+    type: select
+    label: block-index.fields.sort.label
+    default: none
+    empty: false
+    required: true
+    placeholder: "{{ t('block-index.fields.sort.placeholder') }}"
+    options:
+      none: "{{ t('block-index.fields.sort.option.none') }}"
+      field: "{{ t('block-index.fields.sort.option.field') }}"
+      random: "{{ t('block-index.fields.sort.option.random') }}"
+    width: 1/3
+  sort_field:
+    label: block-index.fields.sort_field.label
+    type: text
+    counter: false
+    required: true
+    placeholder: block-index.fields.sort_field.placeholder
+    width: 1/3
+    when:
+      sort: field
+  sort_order:
+    label: block-index.fields.sort_order.label
+    type: select
+    empty: false
+    default: asc
+    required: true
+    placeholder: "{{ t('block-index.fields.sort_order.placeholder') }}"    
+    options:
+      asc: "{{ t('block-index.fields.sort_order.option.asc') }}"
+      desc: "{{ t('block-index.fields.sort_order.option.desc') }}"
+    empty: false
+    default: desc
+    width: 1/3
+    when:
+      sort: field
+  _sort_gap_post:
+    type: gap
+    width: 2/3
+    when:
+      sort: none
+  _sort_gap_post_2:
+    type: gap
+    width: 2/3
+    when:
+      sort: random
+
+  custom_list_tags:
+    type: toggle
+    label: block-index.fields.custom_list_tags.label
+    empty: false
+    text: "{{ t('block-index.fields.custom_list_tags.text') }}"
+    width: 1/3
+  list_tag:
+    label: block-index.fields.list_tag.label
+    type: slug
+    icon: code
+    counter: false
+    required: true
+    placeholder: block-index.fields.list_tag.placeholder
+    width: 1/3
+    when:
+      custom_list_tags: true
+  entry_tag:
+    label: block-index.fields.entry_tag.label
+    type: slug
+    icon: code
+    counter: false
+    required: true
+    placeholder: block-index.fields.entry_tag.placeholder
+    width: 1/3
+    when:
+      custom_list_tags: true
+  _list_tags_gap_post:
+    type: gap
+    width: 2/3
+    when:
+      custom_list_tags: false

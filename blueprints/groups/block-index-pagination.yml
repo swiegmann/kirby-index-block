@@ -1,0 +1,73 @@
+type: group
+
+fields:
+  _pagination_navigation_headline:
+    type: headline
+    label: block-index.fields._pagination_navigation_headline.label
+    numbered: false
+
+  # pagination
+  show_pagination:
+    type: toggle
+    label: block-index.fields.show_pagination.label
+    text: block-index.fields.show_pagination.text
+    default: false
+    width: 1/3
+  pagination_iterations:
+    type: number
+    label: block-index.fields.pagination_iterations.label
+    min: 3
+    max: 15
+    default: 5
+    required: true
+    when:
+      show_pagination: true
+    width: 1/3
+  _pagination_iterations_gap_post:
+    type: gap
+    width: 1/3
+    when:
+      show_pagination: true
+  _show_pagination_gap_post:
+    type: gap
+    width: 2/3
+    when:
+      show_pagination: false
+
+  # navigation
+  show_navigation:
+    type: toggle
+    label: block-index.fields.show_navigation.label
+    text: block-index.fields.show_navigation.text
+    default: false
+    width: 1/3
+  navigation_text_previous_page:
+    type: text
+    label: block-index.fields.navigation_text_previous_page.label
+    placeholder: block-index.navigation.previous
+    counter: false
+    maxlength: 20
+    width: 1/3
+    when:
+      show_navigation: true
+  navigation_text_next_page:
+    type: text
+    label: block-index.fields.navigation_text_next_page.label
+    placeholder: block-index.navigation.next
+    counter: false
+    maxlength: 20
+    width: 1/3
+    when:
+      show_navigation: true
+  _show_navigation_gap_post:
+    type: gap
+    width: 2/3
+    when:
+      show_navigation: false
+  pagination_page_url_argument:
+    type: text
+    counter: false
+    label: block-index.fields.pagination_page_url_argument.label
+    placeholder: "{{ site.blockIndexGetOption('paginationUrlArgument') }}"
+    maxlength: 20
+    width: 1/3
