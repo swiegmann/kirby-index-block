@@ -13,7 +13,7 @@ $i = 1;
 	<?php foreach ($pagination->range($range) as $r): ?>
 		<?php if ($i == 1): // Custom 1st links ?>
 			<?php if ($i !== $r): // Ensure a link to 1st page ?>
-				<?php snippet('block-index-menu-item', [
+				<?php snippet('index-block-menu-item', [
 					'isCurrentPage' => ($pagination->page() === $i),
 					'isListItem' => true,
 					'text' => $i,
@@ -21,13 +21,13 @@ $i = 1;
 				]) ?>
 			<?php endif ?>
 			<?php if ($r > 3): // Item '...' after link to 1st page ?>
-				<?php snippet('block-index-menu-item', [
+				<?php snippet('index-block-menu-item', [
 					'isListItem' => true,
 					'tagName' => 'span',
 					'text' => '&#8230;'
 				]) ?>
 			<?php elseif ($r > 2): // Show link to 2nd page, because '...' does not make sense here ?>
-				<?php snippet('block-index-menu-item', [
+				<?php snippet('index-block-menu-item', [
 					'isCurrentPage' => ($pagination->page() === $i + 1),
 					'isListItem' => true,
 					'text' => $i + 1,
@@ -35,7 +35,7 @@ $i = 1;
 				]) ?>
 			<?php endif ?>
 		<?php endif ?>
-		<?php snippet('block-index-menu-item', [
+		<?php snippet('index-block-menu-item', [
 			'isCurrentPage' => ($r === $pagination->page()),
 			'isListItem' => true,
 			'text' => $r,
@@ -45,20 +45,20 @@ $i = 1;
 	<?php endforeach ?>
 	<?php if ($r !== $pagination->lastPage()): ?>
 		<?php if ($r < $pagination->lastPage() - 2): ?>
-			<?php snippet('block-index-menu-item', [ // Item '...' before link to last page
+			<?php snippet('index-block-menu-item', [ // Item '...' before link to last page
 				'isListItem' => true,
 				'tagName' => 'span',
 				'text' => '&#8230;'
 			]) ?>
 		<?php elseif ($r < $pagination->lastPage() - 1): ?>
-			<?php snippet('block-index-menu-item', [
+			<?php snippet('index-block-menu-item', [
 				'isCurrentPage' => ($pagination->page() === $pagination->lastPage() - 1),
 				'isListItem' => true,
 				'text' => $pagination->lastPage() - 1,
 				'url' => $pagination->pageUrl($pagination->lastPage() - 1)
 			]) ?>
 		<?php endif ?>
-		<?php snippet('block-index-menu-item', [ // Ensure link to last page
+		<?php snippet('index-block-menu-item', [ // Ensure link to last page
 			'isCurrentPage' => ($pagination->page() === $pagination->lastPage()),
 			'isListItem' => true,
 			'text' => $pagination->lastPage(),

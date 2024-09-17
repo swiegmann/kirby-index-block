@@ -1,4 +1,4 @@
-# Kirby Block Index
+# Kirby Index Block
 
 This plugin displays individual index-pages with a variety of options such as:
 
@@ -8,36 +8,27 @@ This plugin displays individual index-pages with a variety of options such as:
   * applying custom filters (using $pages-methods)
   * transforming to files is possible with filters
 * sorting
-  * fields
+  * asc/desc by any field
   * randomizing
 * pagination
 * navigation
-* custom tags
+* custom html-tags
 * custom fields
 * custom snippets
 * extend blueprint with own tabs
 
-
-
 Current translations:
 
 - English
-
 - German
 
-
-
-<a href="kirby-block-index.png">
-    <img src="kirby-block-index.png" align="center" alt="Block preview">
+<a href="kirby-index-block.png">
+    <img src="kirby-index-block.png" align="center" alt="Block preview">
 </a>
-
-
 
 ## Prerequisites
 
 * Kirby 4.3+
-
-
 
 ## Installation
 
@@ -48,80 +39,51 @@ Download and unzip to `/site/plugins`.
 ### Git submodule
 
 ```
-git submodule add https://github.com/swiegmann/kirby-block-index.git
+git submodule add https://github.com/swiegmann/kirby-index-block.git
 ```
 
 ### Composer
 
 ```
-composer require swiegmann/kirby-block-index
+composer require swiegmann/kirby-index-block
 ```
-
-
 
 ## Usage
 
 Add the block-type `index` to your layout/block-blueprints.
 Add a block, select "Index".
 
-
-
 ## Options
 
 | Property              | Default                           | Description                                                        |
 | --------------------- | --------------------------------- | ------------------------------------------------------------------ |
-| filterPath            | /site/helpers/block-index/filters | (string) path to custom filter files                               |
-| snippetPath           | /site/snippets/block-index        | (string) path to custom snippet files                              |
+| filterPath            | /site/helpers/index-block/filters | (string) path to custom filter files                               |
+| snippetPath           | /site/snippets/index-block        | (string) path to custom snippet files                              |
 | paginationUrlArgument | p                                 | (string) url-argument for generated navigation- & pagination-links |
 
 Overwrite all values in `/site/config/config.php`.
 
-
-
-## Customize the default view of list and entries
-
-Copy the snippet-files from:
-
-```
-/site/plugins/kirby-block-index/snippets/block-index.php
-/site/plugins/kirby-block-index/snippets/block-index-entry.php
-```
-
-to:
-
-```
-/site/snippets/block-index.php
-/site/snippets/block-index-entry.php
-```
-
-and edit it.
-
-
-
-## Add own list/entry fields to the block
+## Add own list and entry fields to the block
 
 Copy the blueprint-files from:
 
 ```
-/site/plugins/kirby-block-index/blueprints/groups/block-index-custom-list-fields.yml
-/site/plugins/kirby-block-index/blueprints/groups/block-index-custom-entry-fields.yml
+/site/plugins/kirby-index-block/blueprints/groups/index-block-custom-list-fields.yml
+/site/plugins/kirby-index-block/blueprints/groups/index-block-custom-entry-fields.yml
 ```
 
 to:
 
 ```
-/site/blueprints/groups/block-index-custom-list-fields.yml
-/site/blueprints/groups/block-index-custom-entry-fields.yml
+/site/blueprints/groups
 ```
 
 and add your own fields to the blueprints.
 The new fields appear below the default list/entry fields.
 
-
-
 ## Appy filters, sorting, etc. to the results
 
-1. Create a php-file in: `/site/helpers/block-index`.
+1. Create a php-file in: `/site/helpers/index-block/filters`.
    *Note: This path is a plugin-option, you can override it.*
 
 2. The file will receive the current result-set of pages with the variable name `$entries`. It is an instance of `Kirby\Cms\Pages`, you can apply all methods of `$pages` to it.
@@ -130,42 +92,37 @@ The new fields appear below the default list/entry fields.
 
 3. In the block-section "Pages" click "Apply filter file" and select the file from the list.
 
-
-
 ## Customize the default view of list and entries
 
 Copy the snippet-files from:
 
 ```
-/site/plugins/kirby-block-index/snippets/block-index.php
-/site/plugins/kirby-block-index/snippets/block-index-entry.php
+/site/plugins/kirby-index-block/snippets/index-block.php
+/site/plugins/kirby-index-block/snippets/index-block-entry.php
 ```
 
 to:
 
 ```
-/site/snippets/block-index.php
-/site/snippets/block-index-entry.php
+/site/snippets
 ```
 
 and edit it.
-
-
 
 ## Customize the view of a single block instance
 
 Copy the snippet-files from:
 
 ```
-/site/plugins/kirby-block-index/snippets/block-index.php
-/site/plugins/kirby-block-index/snippets/block-index-entry.php
+/site/plugins/kirby-index-block/snippets/index-block.php
+/site/plugins/kirby-index-block/snippets/index-block-entry.php
 ```
 
 to:
 
 ```
-/site/snippets/block-index/block-index-[your-custom-name].php
-/site/snippets/block-index/block-index-entry-[your-custom-name].php
+/site/snippets/index-block/index-block-[your-custom-name].php
+/site/snippets/index-block/index-block-entry-[your-custom-name].php
 ```
 
 *Note: The destination path is a plugin-option, you can override it.*

@@ -1,0 +1,10 @@
+label: index-block.tab.main.label
+
+extends:
+  - groups/index-block-snippets
+  - groups/index-block-custom-entry-fields
+  - groups/index-block-entries
+  - groups/index-block-pagination
+  - groups/index-block-custom-list-fields
+  - groups/index-block-list
+  - groups/index-block-pages

@@ -8,7 +8,7 @@
 // setup
 $entries = $block->entries();
 $entryTag = $block->entryTag();
-$entrySnippetFile	= $block->entrySnippetFile();
+$entrySnippetFile = $block->entrySnippetFile();
 $listTag = $block->listTag();
 $paginationOffset = $block->paginationOffset($entries->pagination());
 $paginationTextNextPage = $block->paginationTextNextPage($entries->pagination());
@@ -34,7 +34,7 @@ $listAttrs = Html::attr([
 			<?php foreach ($entries as $entry): ?>
 				<?php snippet([
 						$entrySnippetFile,
-						'block-index-entry'
+						'index-block-entry'
 					],
 					$block->controller([
 						'entry' => $entry,
@@ -47,18 +47,18 @@ $listAttrs = Html::attr([
 		<?php if ($entries->pagination()): ?>
 			<nav>
 				<?php if ($content->get('show_navigation')->toBool()): ?>
-					<?php snippet('block-index-navigation', [
+					<?php snippet('index-block-navigation', [
 						'pagination' => $entries->pagination(),
 						'textNextPage' => $paginationTextNextPage,
 						'textPreviousPage' => $paginationTextPreviousPage
 					], slots: $content->get('show_pagination')->toBool()); ?>
-						<?php snippet('block-index-pagination', [
+						<?php snippet('index-block-pagination', [
 							'pagination' => $entries->pagination(),
 							'range' => $content->get('pagination_iterations')->value() ?? 5
 						]) ?>
 					<?php endsnippet() ?>
 				<?php else: ?>
-					<?php snippet('block-index-pagination', [
+					<?php snippet('index-block-pagination', [
 						'pagination' => $entries->pagination(),
 						'range' => $content->get('pagination_iterations')->value() ?? 5
 					]) ?>
@@ -67,7 +67,7 @@ $listAttrs = Html::attr([
 		<?php endif ?>
 	<?php else: ?>
 		<p>
-			<?= t('block-index.no-results') ?>
+			<?= t('index-block.no-results') ?>
 		</p>
 	<?php endif ?>
 </div>

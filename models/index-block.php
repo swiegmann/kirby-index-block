@@ -2,7 +2,7 @@
 
 use Kirby\Cms\Block;
 
-class BlockIndex extends Block
+class IndexBlock extends Block
 {
 	/**
 	 * Extends the default controller with parameter-variables
@@ -22,7 +22,7 @@ class BlockIndex extends Block
 			$name = str_replace(
 				kirby()->root('snippets') .'/',
 				'',
-				kirby()->option('swiegmann.block-index.snippetPath')
+				kirby()->option('swiegmann.index-block.snippetPath')
 					.'/'. $s
 			);
 
@@ -40,7 +40,7 @@ class BlockIndex extends Block
 			$name = str_replace(
 				kirby()->root('snippets') .'/',
 				'',
-				kirby()->option('swiegmann.block-index.snippetPath')
+				kirby()->option('swiegmann.index-block.snippetPath')
 					.'/'. $s
 			);
 
@@ -86,8 +86,8 @@ class BlockIndex extends Block
 
 		// filter-file
 		if ($result && $this->content()->get('use_filter_file')->toBool() && ($s = (string) $this->content()->get('filter_file')->value())) {
-			$includePath = kirby()->site()->_blockIndexCorrectPath(
-				kirby()->site()->blockIndexGetOption('filterPath', kirby()->root('site') . '/helpers/plugins/block-index/filters') .'/'. $s
+			$includePath = kirby()->site()->_indexBlockCorrectPath(
+				kirby()->site()->indexBlockGetOption('filterPath', kirby()->root('site') . '/helpers/plugins/index-block/filters') .'/'. $s
 			);
 
 			$fnInclude = function($file, $block, $entries) {
@@ -149,7 +149,7 @@ class BlockIndex extends Block
 					) {
 						$urlArgument = $s;
 					} else {
-						$urlArgument = kirby()->site()->blockIndexGetOption('paginationUrlArgument', 'p');
+						$urlArgument = kirby()->site()->indexBlockGetOption('paginationUrlArgument', 'p');
 					}
 
 					$result = $result->paginate([
@@ -209,7 +209,7 @@ class BlockIndex extends Block
 
 		return ($s = $this->content()->get('navigation_text_next_page')->value()) && strlen($s)
 			? $s
-			: t('block-index.navigation.next');
+			: t('index-block.navigation.next');
 	}			
 	
 
@@ -221,6 +221,6 @@ class BlockIndex extends Block
 
 		return ($s = $this->content()->get('navigation_text_previous_page')->value()) && strlen($s)
 			? $s
-			: t('block-index.navigation.previous');
+			: t('index-block.navigation.previous');
 	}
 };

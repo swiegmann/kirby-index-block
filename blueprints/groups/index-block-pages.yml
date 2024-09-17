@@ -4,31 +4,31 @@ fields:
   _pages_headline:
     type: headline
     icon: list-bullet
-    label: block-index.fields._pages_headline.label
+    label: index-block.fields._pages_headline.label
     numbered: false
   pages:
-    label: block-index.fields.pages.label
+    label: index-block.fields.pages.label
     type: pages
     required: false
     search: true
     link: false
     image: false
     multiple: true
-    help: block-index.fields.pages.help
+    help: index-block.fields.pages.help
     query: site.childrenAndDrafts
   include_child_pages:
     type: toggle
-    label: block-index.fields.include_child_pages.label
+    label: index-block.fields.include_child_pages.label
     default: false
-    text: block-index.fields.include_child_pages.text
+    text: index-block.fields.include_child_pages.text
     width: 1/3
   templates:
-    label: block-index.fields.templates.label
+    label: index-block.fields.templates.label
     type: multiselect
     sort: true
     options:
       type: query
-      query: site._blockIndexPanelGetBlueprints
+      query: site._indexBlockPanelGetBlueprints
       value: "{{ item.value }}"
       text: "{{ item.title }}"
     width: 2/3
@@ -43,22 +43,22 @@ fields:
   # filter-file
   use_filter_file:
     type: toggle
-    label: block-index.fields.use_filter_file.label
+    label: index-block.fields.use_filter_file.label
     default: false
-    text: block-index.fields.use_filter_file.text
+    text: index-block.fields.use_filter_file.text
     width: 1/3
   filter_file:
-    label: block-index.fields.filter_file.label
+    label: index-block.fields.filter_file.label
     type: select
     required: true
     empty: false
     icon: file-code
     placeholder: "{{ t('index.fields.filter_file.placeholder') }}"
-    help: "{{ site._blockIndexPanelGetFilterFileHelpTranslation }}"
+    help: "{{ site._indexBlockPanelGetFilterFileHelpTranslation }}"
     sort: true
     options:
       type: query
-      query: site._blockIndexPanelGetFilterFiles
+      query: site._indexBlockPanelGetFilterFiles
       value: "{{ item.value }}"
       text: "{{ item.title }}"
     width: 2/3

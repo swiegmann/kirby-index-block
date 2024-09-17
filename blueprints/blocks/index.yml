@@ -2,10 +2,10 @@
 # - copy this file to /site/blueprints/blocks/index.yml
 # - add your own tabs
 
-name: block-index.block.name
+name: index-block.block.name
 
 icon: list-bullet
 
 tabs:
-  main: tabs/block-index
+  main: tabs/index-block
   # yourtab1: ...

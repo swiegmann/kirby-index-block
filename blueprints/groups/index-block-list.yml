@@ -3,12 +3,12 @@ type: group
 fields:
   _index_headline:
     type: headline
-    label: block-index.fields._index_headline.label
+    label: index-block.fields._index_headline.label
     numbered: false
 
   offset:
     type: number
-    label: block-index.fields.offset.label
+    label: index-block.fields.offset.label
     min: 0
     max: 9999999999
     default: 0
@@ -17,7 +17,7 @@ fields:
 
   page_size:
     type: number
-    label: block-index.fields.page_size.label
+    label: index-block.fields.page_size.label
     min: 1
     max: 9999999999
     default: 20
@@ -29,35 +29,35 @@ fields:
 
   sort:
     type: select
-    label: block-index.fields.sort.label
+    label: index-block.fields.sort.label
     default: none
     empty: false
     required: true
-    placeholder: "{{ t('block-index.fields.sort.placeholder') }}"
+    placeholder: "{{ t('index-block.fields.sort.placeholder') }}"
     options:
-      none: "{{ t('block-index.fields.sort.option.none') }}"
-      field: "{{ t('block-index.fields.sort.option.field') }}"
-      random: "{{ t('block-index.fields.sort.option.random') }}"
+      none: "{{ t('index-block.fields.sort.option.none') }}"
+      field: "{{ t('index-block.fields.sort.option.field') }}"
+      random: "{{ t('index-block.fields.sort.option.random') }}"
     width: 1/3
   sort_field:
-    label: block-index.fields.sort_field.label
+    label: index-block.fields.sort_field.label
     type: text
     counter: false
     required: true
-    placeholder: block-index.fields.sort_field.placeholder
+    placeholder: index-block.fields.sort_field.placeholder
     width: 1/3
     when:
       sort: field
   sort_order:
-    label: block-index.fields.sort_order.label
+    label: index-block.fields.sort_order.label
     type: select
     empty: false
     default: asc
     required: true
-    placeholder: "{{ t('block-index.fields.sort_order.placeholder') }}"    
+    placeholder: "{{ t('index-block.fields.sort_order.placeholder') }}"    
     options:
-      asc: "{{ t('block-index.fields.sort_order.option.asc') }}"
-      desc: "{{ t('block-index.fields.sort_order.option.desc') }}"
+      asc: "{{ t('index-block.fields.sort_order.option.asc') }}"
+      desc: "{{ t('index-block.fields.sort_order.option.desc') }}"
     empty: false
     default: desc
     width: 1/3
@@ -76,27 +76,27 @@ fields:
 
   custom_list_tags:
     type: toggle
-    label: block-index.fields.custom_list_tags.label
+    label: index-block.fields.custom_list_tags.label
     empty: false
-    text: "{{ t('block-index.fields.custom_list_tags.text') }}"
+    text: "{{ t('index-block.fields.custom_list_tags.text') }}"
     width: 1/3
   list_tag:
-    label: block-index.fields.list_tag.label
+    label: index-block.fields.list_tag.label
     type: slug
     icon: code
     counter: false
     required: true
-    placeholder: block-index.fields.list_tag.placeholder
+    placeholder: index-block.fields.list_tag.placeholder
     width: 1/3
     when:
       custom_list_tags: true
   entry_tag:
-    label: block-index.fields.entry_tag.label
+    label: index-block.fields.entry_tag.label
     type: slug
     icon: code
     counter: false
     required: true
-    placeholder: block-index.fields.entry_tag.placeholder
+    placeholder: index-block.fields.entry_tag.placeholder
     width: 1/3
     when:
       custom_list_tags: true

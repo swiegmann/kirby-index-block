@@ -8,13 +8,13 @@
  */
 
 ?>
-<?php snippet('block-index-menu-item', [
+<?php snippet('index-block-menu-item', [
 	'tagName' => $pagination->hasPrevPage() ? 'a' : 'span',
 	'text' => $textPreviousPage,
 	'url' => $pagination->hasPrevPage() ? $pagination->prevPageURL() : false
 ]) ?>
 <?= $slot ?>
-<?php snippet('block-index-menu-item', [
+<?php snippet('index-block-menu-item', [
 	'tagName' => $pagination->hasNextPage() ? 'a' : 'span',
 	'text' => $textNextPage,
 	'url' => $pagination->hasNextPage() ? $pagination->nextPageURL() : false

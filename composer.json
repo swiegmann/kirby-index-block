@@ -1,9 +1,9 @@
 {
-  "name": "swiegmann/kirby-block-index",
-  "description": "Kirby Block Index",
+  "name": "swiegmann/kirby-index-block",
+  "description": "Kirby Index Block",
   "license": "MIT",
-  "version": "1.0.0",
-  "homepage": "https://github.com/swiegmann/kirby-block-index",
+  "version": "1.0.1",
+  "homepage": "https://github.com/swiegmann/kirby-index-block",
   "type": "kirby-plugin",
   "authors": [{
     "name": "S.Wiegmann"

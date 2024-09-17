@@ -3,25 +3,25 @@ type: group
 fields:
   _entries_headline:
     type: headline
-    label: block-index.fields._entries_headline.label
+    label: index-block.fields._entries_headline.label
     numbered: false
   show_entry_number:
     type: toggle
-    label: block-index.fields.show_entry_number.label
-    text: block-index.fields.show_entry_number.text
+    label: index-block.fields.show_entry_number.label
+    text: index-block.fields.show_entry_number.text
     default: false
     width: 1/3
   show_page_link:
     type: toggle
-    label: block-index.fields.show_page_link.label
+    label: index-block.fields.show_page_link.label
     default: true
-    text: block-index.fields.show_page_link.text
+    text: index-block.fields.show_page_link.text
     width: 1/3
   show_parent_page_link:
     type: toggle
-    label: block-index.fields.show_parent_page_link.label
+    label: index-block.fields.show_parent_page_link.label
     default: false
-    text: block-index.fields.show_parent_page_link.text
+    text: index-block.fields.show_parent_page_link.text
     width: 1/3
     when:
       include_child_pages: true
