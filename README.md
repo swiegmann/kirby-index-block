@@ -13,8 +13,8 @@ This plugin displays individual index-pages with a variety of options such as:
 * pagination
 * navigation
 * custom html-tags
-* custom fields
 * custom snippets
+* custom fields
 * extend blueprint with own tabs
 
 Current translations:
@@ -62,24 +62,6 @@ Add a block, select "Index".
 | paginationUrlArgument | p                                 | (string) url-argument for generated navigation- & pagination-links |
 
 Overwrite all values in `/site/config/config.php`.
-
-## Add own list and entry fields to the block
-
-Copy the blueprint-files from:
-
-```
-/site/plugins/kirby-index-block/blueprints/groups/index-block-custom-list-fields.yml
-/site/plugins/kirby-index-block/blueprints/groups/index-block-custom-entry-fields.yml
-```
-
-to:
-
-```
-/site/blueprints/groups
-```
-
-and add your own fields to the blueprints.
-The new fields appear below the default list/entry fields.
 
 ## Appy filters, sorting, etc. to the results
 
@@ -129,3 +111,37 @@ to:
 
 Edit the files.
 In the block-section "Snippet" enable "overwrite" and select the files.
+
+## Add own list and entry fields to the block
+
+Copy the blueprint-files from:
+
+```
+/site/plugins/kirby-index-block/blueprints/groups/index-block-custom-list-fields.yml
+/site/plugins/kirby-index-block/blueprints/groups/index-block-custom-entry-fields.yml
+```
+
+to:
+
+```
+/site/blueprints/groups
+```
+
+and add your own fields to the blueprints.
+The new fields appear below the default list/entry fields.
+
+## Add own tabs to the block
+
+Copy the blueprint-file from:
+
+```
+/site/plugins/kirby-index-block/blueprints/blocks/index.yml
+```
+
+to:
+
+```
+/site/blueprints/blocks
+```
+
+and add your own tabs to the blueprint.
