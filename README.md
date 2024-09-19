@@ -32,21 +32,7 @@ Current translations:
 
 ## Installation
 
-### Download
-
 Download and unzip to `/site/plugins`.
-
-### Git submodule
-
-```
-git submodule add https://github.com/swiegmann/kirby-index-block.git
-```
-
-### Composer
-
-```
-composer require swiegmann/kirby-index-block
-```
 
 ## Usage
 
