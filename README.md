@@ -20,6 +20,7 @@ This plugin displays individual index-pages with a variety of options such as:
 Current translations:
 
 - English
+- French (thanks [@joachimesque](https://github.com/joachimesque))
 - German
 
 <a href="kirby-index-block.png">
@@ -38,6 +39,9 @@ Download and unzip to `/site/plugins`.
 
 Add the block-type `index` to your layout/block-blueprints.
 Add a block, select "Index".
+The frontend should display already an unformatted index. You can start applying css to it, and that may already be sufficient to your needs.
+
+However, you can read on and customize the plugin.
 
 ## Options
 
@@ -59,6 +63,7 @@ Overwrite all values in `/site/config/config.php`.
    *Note: You can return also a variable type of* `Kirby\Cms\Files` *by using the relevant* `$pages`*-methods. So the result can be regular files or images.*
 
 3. In the block-section "Pages" click "Apply filter file" and select the file from the list.
+   *Note: The result-set that the filter-file receives is from the exact position in the panel, which is the actual "Apply filter file"-field. Everything below that field can override your filter again (especially sorting).*
 
 ## Customize the default view of list and entries
 

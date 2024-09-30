@@ -1,5 +1,9 @@
 # Kirby Index Block
 
+## 1.0.2
+
+- Added french translation (thanks [@joachimesque](https://github.com/joachimesque))
+
 ## 1.0.1
 
 - Refactored plugin name from 'Kirby Block Index' to 'Kirby Index Block'
