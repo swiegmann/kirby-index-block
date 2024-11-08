@@ -33,7 +33,21 @@ Current translations:
 
 ## Installation
 
-Download and unzip to `/site/plugins`.
+### Download
+
+Download and copy this repository to `/site/plugins/kirby-index-block`.
+
+### Git submodule
+
+```
+git submodule add https://github.com/swiegmann/kirby-index-block.git site/plugins/kirby-index-block
+```
+
+### Composer
+
+```
+composer require swiegmann/kirby-index-block
+```
 
 ## Usage
 
@@ -45,11 +59,12 @@ However, you can read on and customize the plugin.
 
 ## Options
 
-| Property              | Default                           | Description                                                        |
-| --------------------- | --------------------------------- | ------------------------------------------------------------------ |
-| filterPath            | /site/helpers/index-block/filters | (string) path to custom filter files                               |
-| snippetPath           | /site/snippets/index-block        | (string) path to custom snippet files                              |
-| paginationUrlArgument | p                                 | (string) url-argument for generated navigation- & pagination-links |
+| Property                      | Default                           | Description                                                        |
+| ----------------------------- | --------------------------------- | ------------------------------------------------------------------ |
+| filterPath                    | /site/helpers/index-block/filters | (string) path to custom filter files                               |
+| snippetPath                   | /site/snippets/index-block        | (string) path to custom snippet files                              |
+| paginationCurrentPageCssClass | active                            | (string) css-class for the current pagination page                 |
+| paginationUrlArgument         | p                                 | (string) url-argument for generated navigation- & pagination-links |
 
 Overwrite all values in `/site/config/config.php`.
 
@@ -136,3 +151,7 @@ to:
 ```
 
 and add your own tabs to the blueprint.
+
+## License
+
+[MIT License](https://github.com/swiegmann/kirby-index-block/blob/main/LICENSE) Copyright © 2024-present swiegmann

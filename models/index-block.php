@@ -190,7 +190,15 @@ class IndexBlock extends Block
 					? 'ol'
 					: 'ul'
 			);
-	}	
+	}
+
+
+	public function paginationCurrentPageCssClass()
+	{
+		return ($s = $this->content()->get('pagination_current_page_css_class')->value()) && strlen($s)
+			? $s
+			: kirby()->site()->indexBlockGetOption('paginationCurrentPageCssClass', 'active');
+	}
 
 
 	public function paginationOffset(Kirby\Cms\Pagination $pagination = null)

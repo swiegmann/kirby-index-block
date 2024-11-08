@@ -2,6 +2,7 @@
 
 /**
  * Available variables:
+ * $currentPageCssClass string CSS-Class applied to current page
  * $pagination object pagination-object (Kirby\Cms\Pagination)
  * $range int
  */
@@ -14,6 +15,7 @@ $i = 1;
 		<?php if ($i == 1): // Custom 1st links ?>
 			<?php if ($i !== $r): // Ensure a link to 1st page ?>
 				<?php snippet('index-block-menu-item', [
+					'cssClassListItem' => ($pagination->page() === $i) ? $currentPageCssClass : false,
 					'isCurrentPage' => ($pagination->page() === $i),
 					'isListItem' => true,
 					'text' => $i,
@@ -28,6 +30,7 @@ $i = 1;
 				]) ?>
 			<?php elseif ($r > 2): // Show link to 2nd page, because '...' does not make sense here ?>
 				<?php snippet('index-block-menu-item', [
+					'cssClassListItem' => ($pagination->page() === $i) ? $currentPageCssClass : false,
 					'isCurrentPage' => ($pagination->page() === $i + 1),
 					'isListItem' => true,
 					'text' => $i + 1,
@@ -36,6 +39,7 @@ $i = 1;
 			<?php endif ?>
 		<?php endif ?>
 		<?php snippet('index-block-menu-item', [
+			'cssClassListItem' => ($pagination->page() === $i) ? $currentPageCssClass : false,
 			'isCurrentPage' => ($r === $pagination->page()),
 			'isListItem' => true,
 			'text' => $r,
@@ -52,6 +56,7 @@ $i = 1;
 			]) ?>
 		<?php elseif ($r < $pagination->lastPage() - 1): ?>
 			<?php snippet('index-block-menu-item', [
+				'cssClassListItem' => ($pagination->page() === $i) ? $currentPageCssClass : false,
 				'isCurrentPage' => ($pagination->page() === $pagination->lastPage() - 1),
 				'isListItem' => true,
 				'text' => $pagination->lastPage() - 1,
@@ -59,6 +64,7 @@ $i = 1;
 			]) ?>
 		<?php endif ?>
 		<?php snippet('index-block-menu-item', [ // Ensure link to last page
+			'cssClassListItem' => ($pagination->page() === $i) ? $currentPageCssClass : false,
 			'isCurrentPage' => ($pagination->page() === $pagination->lastPage()),
 			'isListItem' => true,
 			'text' => $pagination->lastPage(),

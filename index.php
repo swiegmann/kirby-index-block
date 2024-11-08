@@ -8,6 +8,7 @@ Kirby::plugin('swiegmann/index-block', [
 	'options' => [
 		'filterPath' => kirby()->root('site') . '/helpers/index-block/filters',
 		'snippetPath' => kirby()->root('snippets') .'/index-block',
+		'paginationCurrentPageCssClass' => 'active',
 		'paginationUrlArgument' => 'p'
 	],
 

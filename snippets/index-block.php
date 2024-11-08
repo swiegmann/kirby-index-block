@@ -6,6 +6,7 @@
  */
 
 // setup
+$currentPageCssClass = $block->paginationCurrentPageCssClass();
 $entries = $block->entries();
 $entryTag = $block->entryTag();
 $entrySnippetFile = $block->entrySnippetFile();
@@ -53,12 +54,14 @@ $listAttrs = Html::attr([
 						'textPreviousPage' => $paginationTextPreviousPage
 					], slots: $content->get('show_pagination')->toBool()); ?>
 						<?php snippet('index-block-pagination', [
+							'currentPageCssClass' => $currentPageCssClass,
 							'pagination' => $entries->pagination(),
 							'range' => $content->get('pagination_iterations')->value() ?? 5
 						]) ?>
 					<?php endsnippet() ?>
 				<?php else: ?>
 					<?php snippet('index-block-pagination', [
+						'currentPageCssClass' => $currentPageCssClass,
 						'pagination' => $entries->pagination(),
 						'range' => $content->get('pagination_iterations')->value() ?? 5
 					]) ?>

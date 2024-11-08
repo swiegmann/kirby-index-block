@@ -94,6 +94,7 @@ return [
 	'index-block.fields.navigation_text_previous_page.label' => 'Link-Text: vorherige Seite',
 	'index-block.fields.navigation_text_next_page.label' => 'Link-Text: nächste Seite',
 	'index-block.fields.pagination_page_url_argument.label' => 'URL-Argument',
+	'index-block.fields.pagination_current_page_css_class.label' => 'Aktuelle Seite: CSS-Klasse',
 
 	// snippets
 	'index-block.fields._snippets_headline.label' => 'Snippets',

@@ -28,8 +28,7 @@ $url = $url ?? false;
 if ($isListItem) { // open list-item
 	echo '<li'
 		. Html::attr([
-			'class' => $cssClassListItem,
-			$currentPageAttribute => $currentPageAttribute && $isCurrentPage ? ($currentPageAttributeValue ?? true) : false
+			'class' => $cssClassListItem,			
 		], false, ' ')
 		.'>';
 }
@@ -38,6 +37,7 @@ if ($tagName) { // open tag
 	echo '<'. $tagName 
 		. Html::attr([
 			'class' => $cssClass,
+			$currentPageAttribute => $currentPageAttribute && $isCurrentPage ? ($currentPageAttributeValue ?? true) : false,
 			'href' => $url
 		], false, ' ')
 		.'>';

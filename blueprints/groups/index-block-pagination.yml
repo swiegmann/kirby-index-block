@@ -71,3 +71,11 @@ fields:
     placeholder: "{{ site.indexBlockGetOption('paginationUrlArgument') }}"
     maxlength: 20
     width: 1/3
+  pagination_current_page_css_class:
+    type: text
+    icon: code
+    counter: false
+    label: index-block.fields.pagination_current_page_css_class.label
+    placeholder: "{{ site.indexBlockGetOption('paginationCurrentPageCssClass') }}"
+    maxlength: 30
+    width: 1/3
